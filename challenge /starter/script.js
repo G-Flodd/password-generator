@@ -1,3 +1,4 @@
+
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
@@ -87,9 +88,44 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+ var characterOptions = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+
+  var chosenLength = prompt("Please choose a password length between 10 and 64 ");
+  if (chosenLength > 64 || chosenLength < 10) {
+    chosenLength = prompt("Invalid selection, please choose a password length between 10 and 64 ");
+
+  }
+
+
+  var lowerCase = confirm("Would you like lower case characters");
+   if(lowerCase === true ) {
+    characterOptions.push(lowerCasedCharacters);
+      console.log(characterOptions);
+   }
+
+
+  var upperCase = confirm("Would you like upper case characters");
+  if(upperCase === true ) {
+    characterOptions.concat(upperCasedCharacters);
+      console.log(characterOptions);
+   }
+
+
+  var numeric = confirm("Would you like numerical characters");
+  if(numeric === true ) {
+    characterOptions.concat(numericCharacters);
+      console.log(characterOptions);
+   }
+
+
+  var special = confirm("Would you like special characters");
+  if(special === true ) {
+    characterOptions.concat(specialCharacters);
+      console.log(characterOptions);
+   }
 
 }
 
@@ -100,6 +136,8 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  // if the user has asked for lowercase, then you need too 
+  getPasswordOptions();
 
 }
 
@@ -108,6 +146,9 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
+
+  //do the prompts here and save answers 
+
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
