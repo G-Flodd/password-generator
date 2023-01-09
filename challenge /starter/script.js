@@ -157,17 +157,20 @@ function shuffle(array) {
 // Function for getting a random element from an array
 function getRandom(arr) {
   arrayShuffled = shuffle(arr);
-  console.log(arrayShuffled);
 
-  for(let i=0; i < chosenLength; i++)  
-
+  var passwordOption = "";
+  for (let i = 0; i < chosenLength; i++) {
+    passwordOption = passwordOption.concat(arr[i]);
+  }
+  return passwordOption;
 }
 
 // Function to generate password with user input
 function generatePassword() {
   // if the user has asked for lowercase, then you need too 
   getPasswordOptions();
-  getRandom(characterOptions);
+  var password = getRandom(characterOptions);
+  return password;
 
 }
 
