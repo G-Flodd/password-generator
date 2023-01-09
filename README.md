@@ -16,5 +16,5 @@ To create a random password.
 Please refer to the LICENSE in the repo.
 
 
-[Screenshot of the website](./challenge%20/assets/screen%20shot.png
+[Screenshot of the website](./challenge%20/assets/screen%20shot.png)
 
